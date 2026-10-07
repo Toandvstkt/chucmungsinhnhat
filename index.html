@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fcf7ed">
+  <meta name="description" content="A little card, a sky full of wishes, and a few surprises just for you.">
+  <title>A little birthday magic ✨</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="hunt.css">
+  <script src="translations.js" defer></script>
+  <script src="config.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="hunt.js" defer></script>
+</head>
+<body>
+<canvas id="ambient-magic" aria-hidden="true"></canvas>
+<div class="reading-progress" aria-hidden="true"></div>
+<canvas id="confetti" aria-hidden="true"></canvas>
+<header class="topbar">
+  <a class="brand" href="#home"><span class="brand-flower" aria-hidden="true">✿</span> a little birthday magic</a>
+  <nav aria-label="Navigation"><select id="language" class="language" aria-label="Language"><option value="id">ID</option><option value="en">EN</option></select><a href="#letter">The letter</a><a href="#memories">Little moments</a><button class="music" id="music" aria-pressed="false"><span aria-hidden="true">♫</span><span id="music-label">Play music</span></button><span class="nav-ornament" aria-hidden="true">✧</span></nav>
+</header>
+<main>
+<section class="hero" id="home" aria-labelledby="hero-title">
+  <div class="hero-text">
+    <div class="eyebrow"><span class="little-line"></span> TODAY IS ALL ABOUT YOU</div>
+    <h1 id="hero-title"><span class="hero-first-line">The world is brighter</span> with <em id="friend-name">you</em><span class="title-star" aria-hidden="true">✳</span>.</h1>
+    <p class="hero-description">A special day. An even more special person.<br> And a little birthday magic, just for you.</p>
+    <a class="button primary" href="#cake">Let the magic begin <span aria-hidden="true">↗</span></a>
+    <div class="hand-note">psst… a few little secrets are waiting <span aria-hidden="true">⤵</span></div>
+  </div>
+  <div class="hero-art" aria-label="Illustration of a pink birthday cake on a card">
+    <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+    <div class="constellation" id="constellation" tabindex="0" role="button" aria-label="Trace the three constellation stars from left to right, or press ArrowRight three times.">
+ <svg viewBox="0 0 170 100" aria-hidden="true"><path class="constellation-guide" d="M22 76 83 24 148 68"/><path id="constellation-line" d="M22 76"/><g class="constellation-stars"><text x="22" y="76">✧</text><text x="83" y="24">✧</text><text x="148" y="68">✧</text></g></svg>
+</div><span class="doodle d-two" aria-hidden="true">✳</span><span class="doodle d-three" aria-hidden="true">✦</span>
+    <div class="balloon balloon-pink" aria-hidden="true"><i></i></div><div class="balloon balloon-gold" aria-hidden="true"><i></i></div>
+    <div class="birthday-card"><span class="tape tape-top" aria-hidden="true"></span><div class="card-topline">A DAY TO CELEBRATE YOU</div>
+    <svg viewBox="0 0 360 310" class="cake-illustration" role="img" aria-label="Pink birthday cake with three candles">
+      <defs><pattern id="cakegrain" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r=".5" fill="#ba5769" opacity=".25"/></pattern><linearGradient id="icing" x2="0" y2="1"><stop stop-color="#f7b6c3"/><stop offset="1" stop-color="#dd7c98"/></linearGradient></defs>
+      <ellipse cx="180" cy="269" rx="139" ry="22" fill="#eee0ce"/><ellipse cx="180" cy="263" rx="134" ry="17" fill="#fffdf5" stroke="#d9b6a4" stroke-width="2"/>
+      <path d="M71 167V246Q180 282 289 246V167" fill="url(#icing)" stroke="#ad596f" stroke-width="2"/><path d="M72 210Q180 243 288 210M72 226Q180 261 288 226" fill="none" stroke="#fbd1d8" stroke-width="5"/>
+      <ellipse cx="180" cy="167" rx="109" ry="29" fill="#fce3d9" stroke="#ad596f" stroke-width="2"/><path d="M71 167Q78 185 86 179V192Q93 210 101 191V184Q110 186 117 189V207Q126 225 134 207V193Q145 196 152 196V213Q161 228 169 211V196Q192 199 205 195V211Q214 226 222 210V192L242 187V198Q250 214 257 198V183Q273 183 289 167" fill="#fff0e6" stroke="#ad596f" stroke-width="2"/>
+      <path d="M71 167V246Q180 282 289 246V167" fill="url(#cakegrain)"/>
+      <g stroke="#aa6174" stroke-width="1.5"><rect x="130" y="99" width="13" height="60" rx="3" fill="#f4b5bb"/><rect x="174" y="88" width="13" height="70" rx="3" fill="#e9b94f"/><rect x="217" y="99" width="13" height="60" rx="3" fill="#b6bf9d"/></g>
+      <g stroke="#fff6e9" stroke-width="4"><path d="m132 110 9 7m-9 6 9 7m-9 6 9 7m34-45 9 7m-9 6 9 7m-9 6 9 7m-9 6 9 7m34-32 9 7m-9 6 9 7m-9 6 9 7"/></g>
+      <g class="svg-flames" fill="#eba84a"><path d="M136 95Q120 85 136 65Q152 86 136 95Z"/><path d="M180 84Q162 73 180 51Q196 74 180 84Z"/><path d="M223 95Q208 83 223 65Q240 85 223 95Z"/></g>
+      <g fill="#b65875"><circle cx="106" cy="158" r="3"/><circle cx="158" cy="174" r="3"/><circle cx="255" cy="164" r="3"/></g><g stroke="#a6ad82" stroke-width="3" stroke-linecap="round"><path d="m111 174 7 3m85-8 7-3m-80-8 5-3m94 19 6 2"/></g>
+      <path d="M55 122q-8-8-12 0t12 15q15-15 12-20t-12 5" fill="#d98c98"/><path d="m295 111 5-11 5 11 11 5-11 5-5 11-5-11-11-5Z" fill="#d4aa58"/>
+    </svg>
+    <div class="card-script">happy birthday!</div><div class="card-footer">MADE WITH LOVE, JUST FOR YOU ♡</div></div>
+    <div class="round-sticker"><span>100%</span><small>you deserve<br> all the love</small></div>
+  </div>
+  <div class="hero-bottom"><span>TAKE YOUR TIME. THERE’S MORE BELOW.</span><a href="#cake" aria-label="Scroll to the birthday cake">↓</a><span class="hero-date">A LITTLE MORE JOY, A LITTLE MORE YOU.</span></div>
+</section>
+<div class="ticker" aria-hidden="true"><div>HAPPY BIRTHDAY <i>✳</i> ANOTHER YEAR, A THOUSAND LITTLE JOYS <i>✳</i> STAY WONDERFUL <i>✳</i> HAPPY BIRTHDAY <i>✳</i> ANOTHER YEAR, A THOUSAND LITTLE JOYS <i>✳</i> STAY WONDERFUL <i>✳</i></div></div>
+<section class="cake-section section" id="cake">
+  <div class="section-intro reveal"><span class="eyebrow">01 / A LITTLE WISH</span><h2>Close your eyes.<br> <em>Make a wish.</em></h2><p>Let good things find their way to you.<br> Tap each candle and send your wish to the stars.</p><button class="text-link" id="blow-all">Blow out all three <span aria-hidden="true">→</span></button></div>
+  <div class="wish-stage reveal"><span class="stage-spark s1" aria-hidden="true">✦</span><span class="stage-spark s2" aria-hidden="true">✧</span><div class="interactive-cake"><div class="candles"><button class="candle pink" aria-label="Blow out the first candle" aria-pressed="false"><span class="flame"></span><span class="wick"></span><span class="wax"></span></button><button class="candle yellow" aria-label="Blow out the second candle" aria-pressed="false"><span class="flame"></span><span class="wick"></span><span class="wax"></span></button><button class="candle green" aria-label="Blow out the third candle" aria-pressed="false"><span class="flame"></span><span class="wick"></span><span class="wax"></span></button></div><div class="cake-top"></div><div class="cake-body"><span class="drip"></span><span class="cake-heart">♡</span></div><div class="cake-plate"></div></div><p id="wish-status" aria-live="polite">Three candles. One wish. A sky full of possibility.</p><button class="text-link small" id="relight" hidden>Light them again ↻</button></div>
+</section>
+<section class="letter-section section" id="letter"><div class="letter-art reveal"><div class="envelope"><div class="envelope-paper">Dear you,<br> <span>There’s something I want to tell you…</span></div><div class="envelope-front"></div><button class="wax-seal" id="open-letter" aria-label="Open the sealed letter">♡</button></div><span class="letter-doodle" aria-hidden="true">with love ⤴</span></div><div class="section-intro reveal"><span class="eyebrow">02 / WORDS FROM THE HEART</span><h2>One little letter.<br> <em>So much love.</em></h2><p>Sometimes, the simplest words mean the most.<br> So I saved a few of them for today.</p><button class="button outline" id="letter-button">Open your letter <span aria-hidden="true">↗</span></button><span class="sub-note">The little heart seal works, too ♡</span></div></section>
+<section class="memory-section section" id="memories"><div class="memory-heading reveal"><div><span class="eyebrow">03 / THINGS WORTH KEEPING</span><h2>Little pieces of <em>joy.</em></h2></div><p>A little message behind every card.<br> Tap to turn them over.</p></div><div class="memories">
+  <button class="memory-card reveal" data-memory="0" aria-label="Flip card: Little sunny days" aria-pressed="false"><span class="memory-inner"><span class="memory-front"><span class="tape"></span><span class="memory-image scene-sun"><span class="sun"></span><span class="hill hill-one"></span><span class="hill hill-two"></span><span class="scene-flower">✿</span><span class="scene-caption">little moments,<br> big feelings.</span></span><span class="memory-caption">Little sunny days <span>01</span></span></span><span class="memory-back"><span class="back-icon">☀</span><strong>Joy is closer than you think.</strong><span class="memory-message">May you find a little sunshine, even on the cloudiest days.</span><span class="back-footer">TAP TO TURN BACK ↻</span></span></span></button>
+  <button class="memory-card reveal" data-memory="1" aria-label="Flip card: One more coffee?" aria-pressed="false"><span class="memory-inner"><span class="memory-front"><span class="tape"></span><span class="memory-image scene-coffee"><span class="coffee-steam">∿ ∿</span><span class="coffee-cup"></span><span class="coffee-saucer"></span><span class="coffee-flower">✿</span><span class="scene-caption">good company.<br> better memories.</span></span><span class="memory-caption">One more coffee? <span>02</span></span></span><span class="memory-back"><span class="back-icon">♡</span><strong>The ordinary kind of magic.</strong><span class="memory-message">Good food and long conversations. Here’s to more little moments like these.</span><span class="back-footer">TAP TO TURN BACK ↻</span></span></span></button>
+  <button class="memory-card reveal" data-memory="2" aria-label="Flip card: The next chapter" aria-pressed="false"><span class="memory-inner"><span class="memory-front"><span class="tape"></span><span class="memory-image scene-night"><span class="night-moon"></span><span class="night-stars">✦ · ✧<br>  · ✦ ·<br> ✧ · ✦</span><span class="night-mountain"></span><span class="scene-caption">the best is<br> yet to come.</span></span><span class="memory-caption">The next chapter <span>03</span></span></span><span class="memory-back"><span class="back-icon">✧</span><strong>A new chapter begins.</strong><span class="memory-message">Go at your own pace. Beautiful things are still waiting ahead.</span><span class="back-footer">TAP TO TURN BACK ↻</span></span></span></button>
+<div class="scratch-stamp" id="scratch-stamp" tabindex="0" role="button" aria-label="Silver postcard stamp. Rub to uncover it, or press Space repeatedly."><span class="stamp-secret" aria-hidden="true">☾<small>DREAM</small></span><canvas id="scratch-layer" width="220" height="152" aria-hidden="true"></canvas></div></div><p class="memory-footnote">Keep the lovely. Carry the happy. <span aria-hidden="true">♡</span></p></section>
+<section class="garden-section section" id="garden"><span class="eyebrow reveal">04 / FOR YOUR NEW CHAPTER</span><h2 class="reveal">May you <em>bloom.</em></h2><p class="reveal">In your own way. In your own time.<br> Always surrounded by a little kindness.</p><div class="flower-garden"><button class="garden-flower f-pink" data-flower="0" aria-label="Pick a wish from the pink flower"><span>✿</span><i></i><small>joy</small></button><button class="garden-flower f-yellow" data-flower="1" aria-label="Pick a wish from the yellow flower"><span>✿</span><i></i><small>peace</small></button><button class="garden-flower f-lilac" data-flower="2" aria-label="Pick a wish from the purple flower"><span>✿</span><i></i><small>courage</small></button><button class="garden-flower f-peach" data-flower="3" aria-label="Pick a wish from the peach flower"><span>✿</span><i></i><small>love</small></button><button class="garden-flower f-green" data-flower="4" aria-label="Pick a wish from the green flower"><span>✿</span><i></i><small>luck</small></button></div><p class="garden-hint" id="flower-wish" aria-live="polite">Psst… pick a little wish from the flowers.</p></section>
+<section class="final-section section" id="gift"><div class="gift-box" aria-hidden="true"><div class="gift-bow">୨୧</div><div class="gift-lid"></div><div class="gift-body"></div></div><span class="eyebrow">05 / ONE LAST LITTLE SURPRISE</span><h2>One more present<br> <em>is waiting for you.</em></h2><p id="gift-description">Find all 5 secrets to open your final present.<br> The little details have a story to tell.</p><button class="button primary" id="gift-button">Show me a hint <span aria-hidden="true">✧</span></button><div class="gift-progress" aria-label="Secret discovery progress"><span></span><span></span><span></span><span></span><span></span></div></section>
+</main>
+<footer><div class="footer-peel" id="footer-peel" tabindex="0" role="button" aria-label="Folded paper corner. Drag left to turn it, or press ArrowLeft three times."><span class="moon-under" aria-hidden="true">☾</span><span class="peel-sheet" aria-hidden="true"></span></div><a class="brand" href="#home"><span class="brand-flower" aria-hidden="true">✿</span> a little birthday magic</a><p>Wishing you a happy day. And so many more.</p><span>MADE WITH ♡ · <span id="sender-name">A FRIEND</span></span></footer>
+<button class="discovery-button" id="discovery-button" aria-label="Open the discovery journal"><span aria-hidden="true">✧</span><span id="discovery-count">0 / 5 secrets</span><span class="discovery-arrow" aria-hidden="true">↗</span></button>
+<div class="toast" id="toast" role="status"></div>
+<dialog id="letter-dialog" class="letter-dialog"><button class="close-dialog" aria-label="Close the letter">×</button><span class="eyebrow">A LETTER, JUST FOR YOU</span><h2>Dear <em id="letter-recipient">you</em>,</h2><div class="letter-copy" id="letter-copy"></div><div class="letter-footer"><p class="letter-signature">With love,<br> <span id="letter-sender">Me ♡</span></p><p class="ink-whisper">Some flowers bloom only for those who stay.</p><div class="dialog-flower secret-ink" id="secret-ink" tabindex="0" role="button" aria-label="Letter watermark. Hold for two seconds, or hold Space."><span aria-hidden="true">✿</span><svg viewBox="0 0 80 80" class="hold-ring" aria-hidden="true"><circle cx="40" cy="40" r="35"/></svg></div><div class="ink-secret" id="ink-secret" hidden><span>✿</span><span>gold → violet → rose</span><small>A little rhythm for a little garden.</small></div></div></dialog>
+<dialog id="discovery-dialog" class="discovery-dialog"><button class="close-dialog" aria-label="Close the discovery journal">×</button><span class="eyebrow">FOR A CURIOUS SOUL</span><h2>Your <em>discovery journal.</em></h2><p>A little curiosity. A little attention. Five little surprises.</p><ol class="clue-list" id="clue-list"></ol><button class="text-link" id="reset-progress">Start exploring again ↻</button><p class="reset-note" id="reset-note" aria-live="polite"></p></dialog>
+<dialog id="gift-dialog" class="gift-dialog">
+ <canvas id="fireworks" aria-hidden="true"></canvas><div class="gift-night-stars" aria-hidden="true"></div>
+ <button class="close-dialog" aria-label="Close the gift">×</button>
+ <div class="gift-finale-content">
+  <div class="final-gift" aria-hidden="true"><div class="final-gift-light"></div><div class="gift-box"><div class="gift-bow">୨୧</div><div class="gift-lid"></div><div class="gift-body"></div></div><div class="flying-heart">♡</div></div>
+  <div class="gift-reveal"><span class="eyebrow">YOU FOUND THEM ALL!</span><h2>A sky full of wishes.<br><em>All for <span id="reward-name">you</span>.</em></h2><p id="final-message"></p>
+   <div class="reward-ticket"><span class="ticket-stamp" aria-hidden="true">5 / 5<br>✧</span><div><span class="eyebrow">YOUR LITTLE BIRTHDAY TREASURE</span><strong>A keepsake, made just for you.</strong><small>Take a little piece of this magic with you.</small></div></div>
+   <div class="reward-actions"><button class="button primary" id="save-card">Save your birthday card ↓</button><a class="button gift-link" id="real-gift" target="_blank" rel="noopener noreferrer" hidden>Your extra surprise ↗</a></div>
+   <button class="text-link" id="celebrate">Let the sky sparkle again ✧</button>
+  </div>
+ </div>
+</dialog>
+</body>
+</html>
